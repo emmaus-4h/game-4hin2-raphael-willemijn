@@ -14,8 +14,15 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var playerX = 600; // x-positie van speler
+var playerY = 600; // y-positie van speler
+
+var PLAYER_LEFT = 65;  // Key A
+var PLAYER_RIGHT = 68; // Key D
+var PLAYER_UP = 87;    // Key W
+var PLAYER_DOWN = 83;  // Key S
+var KEY_SPACEBAR = 32; // Key Spacebar
+var KEY_INTERACT = 69; // E-Key for Interaction
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -24,13 +31,23 @@ var spelerY = 600; // y-positie van speler
 /**
  * Updatet globale variabelen met posities van speler, vijanden en kogels
  */
-var beweegAlles = function () {
-  // speler
-
+var playerMovement = function () {
+  if (keyIsDown(PLAYER_LEFT)) {
+		playerX = playerX - 10;
+	}
+  if (keyIsDown(PLAYER_RIGHT)) {
+    playerX = playerX + 10;
+  }
+	if (keyIsDown(PLAYER_UP)) {
+    playerY = playerY - 10;
+  }
+	if (keyIsDown(PLAYER_DOWN)) {
+    playerY = playerY + 10;
+  }
+};
   // vijand
 
   // kogel
-};
 
 /**
  * Checkt botsingen
@@ -58,9 +75,9 @@ var tekenAlles = function () {
 
   // speler
   fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
+  rect(playerX, playerY, 50, 50);
   fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
+  ellipse(playerX + 25, playerY + 25, 10, 10);
 
   // punten en health
 
@@ -99,9 +116,9 @@ function setup() {
  */
 function draw() {
   if (spelStatus === SPELEN) {
-    beweegAlles();
-    verwerkBotsing();
+    playerMovement();
     tekenAlles();
+    verwerkBotsing();
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
