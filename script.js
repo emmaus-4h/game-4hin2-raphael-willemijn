@@ -81,6 +81,11 @@ var tekenAlles = function () {
 
   // punten en health
 
+  // begin en einde
+  fill ("brown")
+  rect (1230, 200, 100, 250);
+  fill ("brown");
+  rect (-50, 200, 100, 250);
 };
 
 /**
