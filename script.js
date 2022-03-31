@@ -33,16 +33,16 @@ var KEY_INTERACT = 69; // E-Key for Interaction
  */
 var playerMovement = function () {
   if (keyIsDown(PLAYER_LEFT)) {
-		playerX = playerX - 10;
+		playerX = playerX - 7;
 	}
   if (keyIsDown(PLAYER_RIGHT)) {
-    playerX = playerX + 10;
+    playerX = playerX + 7;
   }
 	if (keyIsDown(PLAYER_UP)) {
-    playerY = playerY - 10;
+    playerY = playerY - 7;
   }
 	if (keyIsDown(PLAYER_DOWN)) {
-    playerY = playerY + 10;
+    playerY = playerY + 7;
   }
 };
   // vijand
