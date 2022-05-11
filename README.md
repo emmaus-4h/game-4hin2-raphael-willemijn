@@ -1,12 +1,11 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
-Gemaakt door
-- *Willemijn*
-- *Raphael*
+Gemaakt door:
+- Raphaël v/d Corput
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+Geinspirerd door de eerste missie van 'The Elder Scrolls V: Skyrim Dawnguard DLC', het gaat over een nieuwe rekruut bij de Dawnguard organizatie. Deze organizatie staat bekent om vampieren op te jagen en doden. Ze zijn aan het heropbouwen nadat ze onnodig begonnen te worden, de vampieren waren of al dood of hielden zich schuil. Maar laatst is het langhuis van de zogenaamde 'Vigilants of Stendarr' aangevallen door vampieren en jij moet op onderzoek uitgaan naar wat in de nabijgelegen grot, Dimhollow Crypt, zit. Daar ontdek je dat er een aantal vampieren onder leiding van Lokil zich bezig houden in een oud-Noorse begraafplaats. Meer over het verhaal wordt later in een dagboek in de game gestopt.
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
@@ -14,34 +13,68 @@ Geef aan met [x] welke onderdelen af zijn
 
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
-- [x] 1. maak index.html, style.css en script.js met canvas
-- [ ] 2. teken speler
-        - Zet je code in de functie tekenAlles()
-- [ ] 3. beweeg speler
-        - Zet je code in de functie beweegAlles()
-        - Kies de afmeting van speler
-        - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
-- [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. beweeg de tegenspeler of je bal
-- [ ] x. zet punten op het scherm 
-- [ ] x. zorg dat je punten kunt scoren
-- [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] maak index.html, style.css en script.js met canvas
+- [ ] teken speler
+- [x] beweeg speler
+- [ ] Hit-functies.
+- [ ] Maak minstens de volgende vijanden: Skeleton, Vampire, Death Hound, Lokil.
+- [ ] Maak de vriendelijke NPC Serana en geef haar de benodigde AI.
+- [ ] maak alle verschillende vijanden voor de regio.
+- [ ] Items droppen als een vijand dood gaat.
+- [ ] Dood kunnen gaan, healen, en stamina/magicka kunne restoreren.
+- [ ] Dark Souls inspired 'You Died' scherm.
+- [ ] Maak een 'Journal' waarin uitleg en verhaal zit.
 
-### Uitbreidingen 1
-Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+### Vijanden
+- All stats are subject to change due to difficulty. <br>
+- [ ] Skeleton
+  - reference: https://elderscrolls.fandom.com/wiki/Skeleton_(Skyrim)?so=search
+  - 50HP (level-based multiplier: 0.5)
+  - Weapons: Iron Sword, Iron Shield.
+  - Drops: Minor amount of Gold, Bones, Weapons.
+- [ ] Draugr
+  - reference: https://elderscrolls.fandom.com/wiki/Draugr_(Skyrim)?so=search
+  - 100HP (level-based multiplier: 0.5)
+  - Weapons: Ancient Nord Sword, Ancient Nord War Axe, Iron Shield.
+  - Drops: Minor amount of Gold, Gems, Bonemeal, Weapons.
+- [ ] Draugr Deathlord
+  - reference: https://elderscrolls.fandom.com/wiki/Draugr_Deathlord_(Skyrim)?so=search
+  - 250HP (level-based multiplier: 0.5)
+  - Weapons: Ebony War Axe, Ebony Shield.
+  - Drops: Large amount of Gold, Gems, Bonemeal, Weapons.
+- [ ] Death Hound
+  - reference: https://elderscrolls.fandom.com/wiki/Death_Hound_(Dawnguard)?so=search
+  - 100HP (level-based multiplier: 0.5)
+  - 20ATK (level-based multiplier: 0.2)
+  - Drops: Minor amount of Gold, Death Hound Collar, Dog Meat.
+- [ ] Vampire
+  - reference: https://elderscrolls.fandom.com/wiki/Vampire_(Skyrim)?so=search
+  - 150HP (level-based multiplier: 0.5)
+  - Weapons: Iron Sword, Iron Dagger.
+  - Spells: Vampiric Drain.
+  - Drops: Minor amount of Gold, Soul Gems, Gems, Void Salts, Weapons.
+- [ ] Frostbite Spider
+  - reference: https://elderscrolls.fandom.com/wiki/Frostbite_Spider_(Skyrim)?so=search
+  - 50HP (level-based multiplier: 0.5)
+  - 10ATK, 5 Poison. (level-based multiplier: 0.2)
+  - Drops: Frostbite Venom.
+- [ ] Gargoyle
+  - reference: https://elderscrolls.fandom.com/wiki/Gargoyle_(Dawnguard)?so=search
+  - 175HP (level-based multiplier: 0.5)
+  - 30ATK (level-based multiplier: 0.2)
+  - Drops: Ore, Gems.
 
-### Uitbreidingen 2
-Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+### NPC's of vijanden met naam
+- [ ] Serana (npc)
+  - reference: https://elderscrolls.fandom.com/wiki/Serana?so=search
+  - 250HP (level-based multiplier: 0.5) Unkillable.
+  - Weapons: Elven Dagger.
+  - Spells: Vampiric Drain.
+- [ ] Lokil (vijand)
+  - reference: https://elderscrolls.fandom.com/wiki/Lokil?so=search
+  - 250HP (level-based multiplier: 0.5)
+  - Weapons: Lokil's Sword.
+  - Spells: Vampiric Drain.
 
 ### Ideeen voor uitbreidingen
 Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
@@ -59,7 +92,7 @@ Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
 https://www.khanacademy.org/computing/computer-programming/programming
 - p5js reference <br>
 https://p5js.org/reference/
-- informatie van Emmauscollege over game opdracht <br>
+- informatie van Emmauscollege over game opdracht (oa plaatjes en toetsen)<br>
 https://emmauscollege.github.io/informatica/game/
 
 ## Credits
