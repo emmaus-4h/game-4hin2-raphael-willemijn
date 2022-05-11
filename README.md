@@ -1,6 +1,6 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *naam van het spel*
+## Mijn spel: Dawnguard
 Gemaakt door:
 - Raphaël v/d Corput
 
@@ -11,7 +11,7 @@ Geinspirerd door de eerste missie van 'The Elder Scrolls V: Skyrim Dawnguard DLC
 Werk de planning af van boven naar beneden<br>
 Geef aan met [x] welke onderdelen af zijn
 
-### Basisstappen
+## Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [ ] teken speler
@@ -25,7 +25,7 @@ Basis: uitleg, spelen, afgaan en punten
 - [ ] Dark Souls inspired 'You Died' scherm.
 - [ ] Maak een 'Journal' waarin uitleg en verhaal zit.
 
-### Vijanden
+## Vijanden
 - All stats are subject to change due to difficulty. <br>
 - [ ] Skeleton
   - reference: https://elderscrolls.fandom.com/wiki/Skeleton_(Skyrim)?so=search
@@ -64,7 +64,7 @@ Basis: uitleg, spelen, afgaan en punten
   - 30ATK (level-based multiplier: 0.2)
   - Drops: Ore, Gems.
 
-### NPC's of vijanden met naam
+## NPC's of vijanden met naam
 - [ ] Serana (npc)
   - reference: https://elderscrolls.fandom.com/wiki/Serana?so=search
   - 250HP (level-based multiplier: 0.5) Unkillable.
@@ -76,16 +76,50 @@ Basis: uitleg, spelen, afgaan en punten
   - Weapons: Lokil's Sword.
   - Spells: Vampiric Drain.
 
-### Ideeen voor uitbreidingen
-Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
-- [ ] Gebruik plaatjes voor de vijanden
-- [ ] Animeer speler
-- [ ] Laat badges vallen die extra's aan speler geven
-- [ ] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand
-- [ ] Maak andere vijanden bij toenemen tekenVijand
-- [ ] Laat vijanden bewegen in patronen
-- [ ] Maak bediening met touch of bewegen van telefoon mogelijk (zorg dat toetsenbordbediening ook blijft werken)
-- [ ] ...
+
+## Weapons
+
+### Iron Weapons
+- [ ] Iron Sword
+  - 10 DMG
+- [ ] Iron War Axe
+  - 12 DMG
+- [ ] Iron Dagger
+  - 8 DMG
+- [ ] Iron Shield
+  - 4 DMG
+  - 5 Block
+
+### Dawnguard Weapons
+- [ ] Dawnguard Axe
+  - 15 DMG
+- [ ] Dawnguard Shield
+  - 6 DMG
+  - 8 Block
+
+### Ancient Nord Weapons
+- [ ] Ancient Nord Sword
+  - 10 DMG
+- [ ] Ancient Nord War Axe
+  - 12 DMG
+
+### Ebony Weapons
+- [ ] Ebony War Axe
+  - 20 DMG
+- [ ] Ebony Shield
+  - 6 DMG
+  - 10 Block
+
+### Other Weapons
+- [ ] Elven Dagger
+  - 12 DMG
+- [ ] Lokil's Sword
+  - 10 DMG
+
+### Spells
+- [ ] Vampiric Drain
+  - 5 DMG/s
+  - Magicka Cost: 10/s
 
 ## Documentatie
 - Khan Academy cursus JavaScript met p5js library <br>
