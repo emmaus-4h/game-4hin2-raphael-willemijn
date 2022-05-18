@@ -3,6 +3,7 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 ## Mijn spel: Dawnguard
 Gemaakt door:
 - Raphaël v/d Corput
+- Wilemijn Huijing
 
 ### Beschrijving
 Geinspirerd door de eerste missie van 'The Elder Scrolls V: Skyrim Dawnguard DLC', het gaat over een nieuwe rekruut bij de Dawnguard organizatie. Deze organizatie staat bekent om vampieren op te jagen en doden. Ze zijn aan het heropbouwen nadat ze onnodig begonnen te worden, de vampieren waren of al dood of hielden zich schuil. Maar laatst is het langhuis van de zogenaamde 'Vigilants of Stendarr' aangevallen door vampieren en jij moet op onderzoek uitgaan naar wat in de nabijgelegen grot, Dimhollow Crypt, zit. Daar ontdek je dat er een aantal vampieren onder leiding van Lokil zich bezig houden in een oud-Noorse begraafplaats. Meer over het verhaal wordt later in een dagboek in de game gestopt.
@@ -14,7 +15,7 @@ Geef aan met [x] welke onderdelen af zijn
 ## Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
-- [ ] teken speler
+- [x] teken speler
 - [x] beweeg speler
 - [ ] Hit-functies.
 - [ ] Maak minstens de volgende vijanden: Skeleton, Vampire, Death Hound, Lokil.

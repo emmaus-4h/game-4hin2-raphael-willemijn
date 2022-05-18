@@ -24,6 +24,8 @@ var PLAYER_DOWN = 83;  // Key S
 var KEY_SPACEBAR = 32; // Key Spacebar
 var KEY_INTERACT = 69; // E-Key for Interaction
 
+var HP = 100
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -70,9 +72,13 @@ var tekenAlles = function () {
   // achtergrond
   background("blue");
   // vijand
-
-  // kogel
-
+  
+  // hit registration
+  if (mouseIsPressed === true) {
+    if (mouseButton === LEFT) {
+      rect(mouseX, mouseY, 1, 75);
+    }
+  }
   // speler
   fill("white");
   rect(playerX, playerY, 50, 50);
@@ -81,13 +87,7 @@ var tekenAlles = function () {
 
   // punten en health
 
-  // begin en einde
-  fill ("brown")
-  rect (1230, 200, 100, 250);
-  fill ("brown");
-  rect (-50, 200, 100, 250);
 };
-
 /**
  * return true als het gameover is
  * anders return false
