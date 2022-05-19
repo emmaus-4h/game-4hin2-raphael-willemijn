@@ -12,6 +12,7 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
+const UITLEG = 3;
 var spelStatus = SPELEN;
 
 var playerX = 600; // x-positie van speler
@@ -123,10 +124,28 @@ function draw() {
     verwerkBotsing();
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
+      console.log("spelen");
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
+    console.log("uitleg");
+    textSize(70);
+    fill (black);
+    text ("game over, druk spatie voor start", 100 , 100);
+    if (keyIsDown(32)) { // spatie
+      spelStatus = UITLEG;
+    }
+  }
+  
+  if (spelStatus === UITLEG){
+    // teken uitleg scherm
+    console.log("uitleg");
+    textSize(70);
+    fill (black);
+    text ("uitleg: druk op enter", 100 , 100);
+      if (keyIsDown(13)) { // enter
+      spelStatus = SPELEN;
+      }
   }
 }
