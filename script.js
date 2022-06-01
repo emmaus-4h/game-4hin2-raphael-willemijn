@@ -18,6 +18,9 @@ var spelStatus = SPELEN;
 var playerX = 600; // x-positie van speler
 var playerY = 600; // y-positie van speler
 
+var enemyX = 600;
+var enemyY = 500;
+
 var PLAYER_LEFT = 65;  // Key A
 var PLAYER_RIGHT = 68; // Key D
 var PLAYER_UP = 87;    // Key W
@@ -59,7 +62,11 @@ var playerMovement = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+  if (playerX - enemyX < 50 && playerX - enemyX >- 50 &&
+     playerY - enemyY < 50 && playerY - enemyY >- 50) {
+  console.log("botsing");
+  HP = HP - 1;
+  }
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -71,8 +78,13 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  background("blue");
+  background ('blue');
+  
   // vijand
+  fill ("red");
+  rect (enemyX, enemyY, 50, 50);
+  fill("black");
+  ellipse (enemyX + 25, enemyY + 25, 10, 10);
   
   // hit registration
   if (mouseIsPressed === true) {
