@@ -17,9 +17,8 @@ var spelStatus = SPELEN;
 
 var playerX = 600; // x-positie van speler
 var playerY = 600; // y-positie van speler
-
-var enemyX = 600;
-var enemyY = 500;
+var enemyX = 100;  // x-positie van vijand
+var enemyY = 100;  // y-positie van vijand
 
 var PLAYER_LEFT = 65;  // Key A
 var PLAYER_RIGHT = 68; // Key D
@@ -27,8 +26,10 @@ var PLAYER_UP = 87;    // Key W
 var PLAYER_DOWN = 83;  // Key S
 var KEY_SPACEBAR = 32; // Key Spacebar
 var KEY_INTERACT = 69; // E-Key for Interaction
+var KEY_ENTER = 13;    // Enter key to reset game
 
 var HP = 100
+var enemyHP = 10
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -53,6 +54,9 @@ var playerMovement = function () {
 };
   // vijand
 
+var enemyAI = function () {
+	
+}
   // kogel
 
 /**
@@ -62,15 +66,16 @@ var playerMovement = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-  if (playerX - enemyX < 50 && playerX - enemyX >- 50 &&
-     playerY - enemyY < 50 && playerY - enemyY >- 50) {
-  console.log("botsing");
-  HP = HP - 1;
-  }
-  // botsing kogel tegen vijand
+	if (playerX - enemyX < 50 &&
+	    playerX - enemyX >-50 &&
+	    playerY - enemyY < 50 &&
+	    playerY - enemyY >-50) {
+	  console.log("botsing");
+		HP = HP - 1;
+	}
+  // botsing zwaard tegen vijand
 
   // update punten en health
-
 };
 
 /**
@@ -78,20 +83,12 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  background ('blue');
-  
+  background("blue");
   // vijand
-  fill ("red");
-  rect (enemyX, enemyY, 50, 50);
-  fill("black");
-  ellipse (enemyX + 25, enemyY + 25, 10, 10);
-  
-  // hit registration
-  if (mouseIsPressed === true) {
-    if (mouseButton === LEFT) {
-      rect(mouseX, mouseY, 1, 75);
-    }
-  }
+  fill("red");
+	rect(enemyX, enemyY, 50, 50);
+	fill("black");
+	ellipse(enemyX + 25, enemyY + 25, 10, 10);
   // speler
   fill("white");
   rect(playerX, playerY, 50, 50);
@@ -99,6 +96,11 @@ var tekenAlles = function () {
   ellipse(playerX + 25, playerY + 25, 10, 10);
 
   // punten en health
+	fill("red");
+	rect(0, 0, 200, 50);
+	textSize(32);
+	fill("white");
+	text("HP: " + HP, 0, 0, 200, 50);
 
 };
 /**
@@ -107,7 +109,12 @@ var tekenAlles = function () {
  */
 var checkGameOver = function () {
   // check of HP 0 is , of tijd op is, of ...
-  return false;
+	if (HP === -1) {
+		return true;
+	}
+	else {
+	  return false;
+	}
 };
 
 /* ********************************************* */
@@ -132,32 +139,22 @@ function setup() {
 function draw() {
   if (spelStatus === SPELEN) {
     playerMovement();
+		enemyAI();
     tekenAlles();
     verwerkBotsing();
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
-      console.log("spelen");
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-    console.log("uitleg");
-    textSize(70);
-    fill (black);
-    text ("game over, druk spatie voor start", 100 , 100);
-    if (keyIsDown(32)) { // spatie
-      spelStatus = UITLEG;
-    }
-  }
-  
-  if (spelStatus === UITLEG){
-    // teken uitleg scherm
-    console.log("uitleg");
-    textSize(70);
-    fill (black);
-    text ("uitleg: druk op enter", 100 , 100);
-      if (keyIsDown(13)) { // enter
-      spelStatus = SPELEN;
-      }
-  }
+		
+		text("GAME OVER", width/2, height/2);
+		if (keyIsDown(KEY_ENTER)) {
+			playerX = 600;
+			playerY = 600;
+			spelStatus = SPELEN;
+			HP = 100;
+		}
+	}
 }
