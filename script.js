@@ -148,8 +148,18 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-		
-		text("GAME OVER", width/2, height/2);
+
+    fill ("black");
+		rect(0, 0, 1800, 1000);
+    fill ("white");
+    textSize (60);
+		text("GAME OVER", width/3, height/2);
+    color (250, 0, 0);
+    textFont ("BlackChancery");
+    textSize (100);
+    text ("Ardok", 480, 220, width/3, height/3);
+    textSize (30);
+    text ("Press enter to play", 500, 450);
 		if (keyIsDown(KEY_ENTER)) {
 			playerX = 600;
 			playerY = 600;
