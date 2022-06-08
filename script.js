@@ -12,8 +12,8 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
-const UITLEG = 3;
-var spelStatus = SPELEN;
+const STARTSCHERM = 3;
+var spelStatus = STARTSCHERM;
 
 var playerX = 600; // x-positie van speler
 var playerY = 600; // y-positie van speler
@@ -83,7 +83,7 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  background("blue");
+  background('#1A4314');
   // vijand
   fill("red");
 	rect(enemyX, enemyY, 50, 50);
@@ -146,11 +146,25 @@ function draw() {
       spelStatus = GAMEOVER;
     }
   }
-  if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
 
-    fill ("black");
-		rect(0, 0, 1800, 1000);
+    // teken game-over scherm
+	if (spelStatus === STARTSCHERM) {
+    background("black");
+    fill ("white");
+    textSize (60);
+    text ("Ardok", 530, 220, width/3, height/3);
+    textSize (30);
+    text ("Press enter to play", 500, 400);
+    textFont ("BlackChancery");
+    if (keyIsDown(KEY_ENTER)) {
+      playerX = 600;
+      playerY = 600;
+      spelStatus = SPELEN;
+      hp = 100;
+    }
+  }
+  if (spelStatus === GAMEOVER) {
+		background("black")
     fill ("white");
     textSize (60);
 		text("GAME OVER", width/3, height/2);
@@ -160,11 +174,17 @@ function draw() {
     text ("Ardok", 480, 220, width/3, height/3);
     textSize (30);
     text ("Press enter to play", 500, 450);
-		if (keyIsDown(KEY_ENTER)) {
-			playerX = 600;
-			playerY = 600;
-			spelStatus = SPELEN;
-			HP = 100;
-		}
-	}
+    textSize (30);
+    text ("Press spacebar to exit", 485, 500);
+    
+    if (keyIsDown(KEY_SPACEBAR)) {
+      spelStatus = STARTSCHERM;
+    }
+    if (keyIsDown(KEY_ENTER)) {
+      playerX = 600;
+      playerY = 600;
+      HP = 100;
+      spelStatus = SPELEN;
+    }
+  }
 }
