@@ -28,16 +28,15 @@ var KEY_SPACEBAR = 32; // Key Spacebar
 var KEY_INTERACT = 69; // E-Key for Interaction
 var KEY_ENTER = 13;    // Enter key to reset game
 
-var HP = 100
-var enemyHP = 10
+var HP = 100;          // Hitpoints
+var SCORE = 0;         // Score
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
 
 /**
- * Updatet globale variabelen met posities van speler, vijanden en kogels
- */
+ * Updatet globale variabelen met posities van speler, vijanden en kogels */
 var playerMovement = function () {
   if (keyIsDown(PLAYER_LEFT)) {
 		playerX = playerX - 7;
@@ -56,8 +55,9 @@ var playerMovement = function () {
 
 var enemyAI = function () {
 	
-}
-  // kogel
+};
+  // blobjes
+
 
 /**
  * Checkt botsingen
@@ -94,14 +94,24 @@ var tekenAlles = function () {
   rect(playerX, playerY, 50, 50);
   fill("black");
   ellipse(playerX + 25, playerY + 25, 10, 10);
-
+  // blobjes
+	for (let i = 0; i < 10; i++) {
+		x = random(0, width);
+		y = random(0, height);
+		fill()
+		rect(x, y, 5, 5);
+	}
   // punten en health
 	fill("red");
 	rect(0, 0, 200, 50);
 	textSize(32);
 	fill("white");
-	text("HP: " + HP, 0, 0, 200, 50);
-
+	text("HP: " + HP, 0, 5, 200, 50);
+	fill("grey");
+	rect(0, 50, 200, 50);
+	textSize(32);
+	fill("white");
+	text("Score: " + SCORE, 0, 55, 200, 50);
 };
 /**
  * return true als het gameover is
@@ -172,18 +182,22 @@ function draw() {
     textFont ("BlackChancery");
     textSize (100);
     text ("Ardok", 480, 220, width/3, height/3);
-    textSize (30);
+		textSize (30);
+		text ("Your Score: " + SCORE, 525, 405);
     text ("Press enter to play", 500, 450);
-    textSize (30);
     text ("Press spacebar to exit", 485, 500);
-    
     if (keyIsDown(KEY_SPACEBAR)) {
+			playerX = 600;
+			playerY = 600;
+			HP = 100;
+			SCORE = 0;
       spelStatus = STARTSCHERM;
     }
     if (keyIsDown(KEY_ENTER)) {
       playerX = 600;
       playerY = 600;
       HP = 100;
+			SCORE - 0;
       spelStatus = SPELEN;
     }
   }
